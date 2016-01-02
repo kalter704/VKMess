@@ -18,7 +18,7 @@ public class Application extends android.app.Application {
             if (newToken == null) {
                 Log.d("QWERTY", "1");
                 // VKAccessToken is invalid
-                Intent intent = new Intent(Application.this, MainActivity.class);
+                Intent intent = new Intent(Application.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -28,8 +28,12 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         vkAccessTokenTracker.startTracking();
         VKSdk.initialize(this);
+
+        UserToken userToken = UserToken.getInstance();
+        userToken.loadUserTokenFile(this);
     }
 
 }

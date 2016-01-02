@@ -31,11 +31,11 @@ import java.net.URLEncoder;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    GetContent getget;
+    //GetContent getget;
 
-    private EditText et;
+    //private EditText et;
 
-    private String accToken = "77831cc8e0471d65785d4c8735c8ba532a34c104eaa39464edb697336fc2e1c194d67e8ac6839510c481e";
+    //private String accToken = "77831cc8e0471d65785d4c8735c8ba532a34c104eaa39464edb697336fc2e1c194d67e8ac6839510c481e";
 
     String[] scopes = {
             VKScope.MESSAGES,
@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //wv = (WebView) findViewById(R.id.webView);
         //wv.setWebViewClient(new VKWebViewClient());
 
-        et = (EditText) findViewById(R.id.editText);
-        ((Button) findViewById(R.id.showMessage)).setOnClickListener(this);
+        //et = (EditText) findViewById(R.id.editText);
+        //((Button) findViewById(R.id.showMessage)).setOnClickListener(this);
 
         //wv.loadUrl("https://oauth.vk.com/authorize?client_id=5185699&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=messages,friends,photos&response_type=token&v=5.42");
 
 
         //VKSdk.initialize(MainActivity.this);
 
-        VKSdk.login(this, scopes);
+        //VKSdk.login(this, scopes);
 
 
         //String myurl = "https://oauth.vk.com/authorize?client_id=5185699&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,photos&response_type=token&v=5.42";
@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
         */
+
+        ((Button) findViewById(R.id.toFriedns)).setOnClickListener(this);
+        ((Button) findViewById(R.id.toMessages)).setOnClickListener(this);
+
+
     }
 
     @Override
@@ -86,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+
+        /*
         String text123 = et.getText().toString();
 
         et.setText("");
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("QWERTY", address);
 
         new GetContent().execute(address);
+        */
 
         /*
         try {
@@ -114,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         */
         //Log.d("QWERTY", VKAccessToken.ACCESS_TOKEN);
     }
+
+    /*
 
     private String getContent(String path) throws IOException {
         BufferedReader reader = null;
@@ -185,25 +195,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // TODO: do something with the feed
         }
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (!VKSdk.onActivityResult(requestCode, resultCode, data, new VKCallback<VKAccessToken>() {
-            @Override
-            public void onResult(VKAccessToken res) {
-                Toast.makeText(MainActivity.this, "Good", Toast.LENGTH_SHORT).show();
-                VKAccessToken vkAccessToken = VKAccessToken.currentToken();
-                Log.d("QWERTY", vkAccessToken.accessToken);
-                accToken = vkAccessToken.accessToken;
-            }
-
-            @Override
-            public void onError(VKError error) {
-                Toast.makeText(MainActivity.this, "Bad", Toast.LENGTH_SHORT).show();
-            }
-        })) {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
+    */
 
 }

@@ -10,20 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Mess"
-        android:id="@+id/showMessage" />
+        android:text="Друзья"
+        android:id="@+id/toFriedns" />
 
-    <WebView
+    <Button
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/webView" />
-
+        android:text="Сообщения"
+        android:id="@+id/toMessages" />
 </LinearLayout>
