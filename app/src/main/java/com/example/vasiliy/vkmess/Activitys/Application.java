@@ -1,8 +1,8 @@
-package com.example.vasiliy.vkmess;
+package com.example.vasiliy.vkmess.Activitys;
 
 import android.content.Intent;
-import android.util.Log;
 
+import com.example.vasiliy.vkmess.Classes.UserToken;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKAccessTokenTracker;
 import com.vk.sdk.VKSdk;
@@ -16,7 +16,7 @@ public class Application extends android.app.Application {
         @Override
         public void onVKAccessTokenChanged(VKAccessToken oldToken, VKAccessToken newToken) {
             if (newToken == null) {
-                Log.d("QWERTY", "1");
+                //Log.d("QWERTY", "1");
                 // VKAccessToken is invalid
                 Intent intent = new Intent(Application.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

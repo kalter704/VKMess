@@ -1,11 +1,12 @@
-package com.example.vasiliy.vkmess;
+package com.example.vasiliy.vkmess.Activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
+import com.example.vasiliy.vkmess.R;
+import com.example.vasiliy.vkmess.Classes.UserToken;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKScope;
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 UserToken userToken = UserToken.getInstance();
 
                 userToken.accessToken = vkAccessToken.accessToken;
-                userToken.expiresIn = vkAccessToken.expiresIn;
+                userToken.expiresIn = 86400;
                 userToken.userId = vkAccessToken.userId;
                 userToken.created = vkAccessToken.created;
 
@@ -49,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Log.d("QWERTY", vkAccessToken.accessToken);
                 //accToken = vkAccessToken.accessToken;
+                finish();
             }
 
             @Override

@@ -1,32 +1,16 @@
-package com.example.vasiliy.vkmess;
+package com.example.vasiliy.vkmess.Activitys;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.vk.sdk.VKAccessToken;
-import com.vk.sdk.VKCallback;
+import com.example.vasiliy.vkmess.R;
+import com.example.vasiliy.vkmess.Classes.UserToken;
 import com.vk.sdk.VKScope;
-import com.vk.sdk.VKSdk;
-import com.vk.sdk.api.VKError;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.net.URLEncoder;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -79,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.toFriedns)).setOnClickListener(this);
         ((Button) findViewById(R.id.toMessages)).setOnClickListener(this);
 
+        if(!UserToken.getInstance().isReady || UserToken.getInstance().isExpired()) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
 
     }
 
@@ -91,6 +78,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+        Intent intent = null;
+
+        if(v.getId() == R.id.toFriedns) {
+            intent = new Intent(MainActivity.this, FriendsActivity.class);
+        }
+        if(v.getId() == R.id.toMessages) {
+            intent = new Intent(MainActivity.this, MessagesActivity.class);
+        }
+
+        startActivity(intent);
 
         /*
         String text123 = et.getText().toString();

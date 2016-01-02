@@ -1,4 +1,4 @@
-package com.example.vasiliy.vkmess;
+package com.example.vasiliy.vkmess.Classes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -57,7 +57,7 @@ public class UserToken {
     }
 
     public boolean isExpired() {
-        return expiresIn > 0 && expiresIn * 1000 + created < System.currentTimeMillis();
+        return expiresIn > 0 && expiresIn * 1000 + created + 600000 < System.currentTimeMillis();
     }
 
 }

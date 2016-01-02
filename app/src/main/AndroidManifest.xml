@@ -8,7 +8,7 @@
 
     <!-- android:name=".Application" -->
     <application
-        android:name=".Application"
+        android:name=".Activitys.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,20 +18,18 @@
             android:name="com.vk.sdk.VKServiceActivity"
             android:label="ServiceActivity"
             android:theme="@style/VK.Transparent" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".Activitys.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" >
+        <activity android:name=".Activitys.LoginActivity" >
         </activity>
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".Activitys.FriendsActivity" >
         </activity>
-        <activity android:name=".FriendsActivity" >
-        </activity>
-        <activity android:name=".MessagesActivity" >
+        <activity android:name=".Activitys.MessagesActivity" >
         </activity>
     </application>
 
