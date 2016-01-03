@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="5dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/avatarImg"
+        android:src="@drawable/ic_launcher"
+        android:layout_gravity="left|center_vertical" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,6 +18,44 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/name"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/avatarImg"
+        android:layout_toEndOf="@+id/avatarImg"
+        android:layout_marginLeft="10dp"/>
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:id="@+id/linOnline"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Online"
+            android:id="@+id/textView2" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/imgMobOnline"
+            android:src="@drawable/online_mobile"
+            android:layout_alignRight="@+id/name"
+            android:layout_alignEnd="@+id/name"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_below="@+id/name"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+</RelativeLayout>

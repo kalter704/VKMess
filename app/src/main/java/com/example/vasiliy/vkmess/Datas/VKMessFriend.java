@@ -12,16 +12,19 @@ public class VKMessFriend {
     private String lastName;
     private String photo;
     private int online;
+    private int onlineMobile;
 
     public VKMessFriend() {
     }
 
-    public VKMessFriend(String id, String firstName, String lastName, String photo, int online) {
+    public VKMessFriend(String id, String firstName, String lastName, String photo, int online, int onlineMobile) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.photo = photo;
         this.online = online;
+        this.onlineMobile = onlineMobile;
+
     }
 
     public String getId() {
@@ -62,5 +65,13 @@ public class VKMessFriend {
 
     public void setOnline(int online) {
         this.online = online;
+    }
+
+    public int getOnlineMobile() {
+        return onlineMobile;
+    }
+
+    public void setOnlineMobile(int onlineMobile) {
+        this.onlineMobile = onlineMobile;
     }
 }
